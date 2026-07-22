@@ -34,16 +34,29 @@ export default function Demandes() {
     await api.put(`/admin/demandes/${id}/statut?statut=${statut}`);
     load();
   };
-
+  const exporterExcel = async () => {
+    const params = filtreStatut ? { statut: filtreStatut } : {};
+    const res = await api.get("/admin/demandes/export-excel", { params, responseType: "blob" });
+    const url = window.URL.createObjectURL(new Blob([res.data]));
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "demandes.xlsx");
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h3>Demandes de stage</h3>
-        <select className="form-select" style={{ width: 250 }}
-                value={filtreStatut} onChange={(e) => setFiltreStatut(e.target.value)}>
-          <option value="">Tous les statuts</option>
-          {STATUTS.map((s) => <option key={s} value={s}>{s}</option>)}
-        </select>
+        <div className="d-flex gap-2">
+          <select className="form-select" style={{ width: 250 }}
+                  value={filtreStatut} onChange={(e) => setFiltreStatut(e.target.value)}>
+            <option value="">Tous les statuts</option>
+            {STATUTS.map((s) => <option key={s} value={s}>{s}</option>)}
+          </select>
+          <button className="btn btn-outline-primary" onClick={exporterExcel}>Exporter Excel</button>
+        </div>
       </div>
 
       {loading ? <p>Chargement...</p> : (
