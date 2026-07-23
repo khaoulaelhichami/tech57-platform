@@ -1,12 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import PublicNavbar from "./components/PublicNavbar";
+import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminLayout from "./components/admin/AdminLayout";
 
 // Pages publiques
 import Home from "./pages/public/Home";
+import APropos from "./pages/public/APropos";
 import Services from "./pages/public/Services";
 import Projets from "./pages/public/Projets";
+import Clients from "./pages/public/Clients";
+import Partenaires from "./pages/public/Partenaires";
 import Equipe from "./pages/public/Equipe";
 import Contact from "./pages/public/Contact";
 import DemandeStage from "./pages/public/DemandeStage";
@@ -32,6 +36,7 @@ function PublicLayout({ children }) {
     <>
       <PublicNavbar />
       {children}
+      <Footer />
     </>
   );
 }
@@ -41,8 +46,11 @@ export default function App() {
     <Routes>
       {/* --- Site public (vitrine) --- */}
       <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
+      <Route path="/a-propos" element={<PublicLayout><APropos /></PublicLayout>} />
       <Route path="/services" element={<PublicLayout><Services /></PublicLayout>} />
       <Route path="/projets" element={<PublicLayout><Projets /></PublicLayout>} />
+      <Route path="/clients" element={<PublicLayout><Clients /></PublicLayout>} />
+      <Route path="/partenaires" element={<PublicLayout><Partenaires /></PublicLayout>} />
       <Route path="/equipe" element={<PublicLayout><Equipe /></PublicLayout>} />
       <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
       <Route path="/demande-stage" element={<PublicLayout><DemandeStage /></PublicLayout>} />
