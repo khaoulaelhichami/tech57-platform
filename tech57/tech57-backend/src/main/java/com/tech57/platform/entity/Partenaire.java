@@ -1,6 +1,7 @@
 package com.tech57.platform.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Entity
@@ -12,7 +13,8 @@ public class Partenaire {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @NotBlank(message = "Le nom est obligatoire")
+    @Column(nullable = false, length = 150)
     private String nom;
 
     private String logo;

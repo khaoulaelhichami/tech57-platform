@@ -1,11 +1,15 @@
 :root {
-  --tech57-blue: #4FA8D8;
+  --tech57-blue: #4FA8D8;        /* bleu ciel principal - fonds pleins, boutons */
+  --tech57-blue-dark: #00658C;   /* bleu plus soutenu - texte/icônes sur fond clair */
+  --tech57-blue-light: #E8F4FB;  /* bleu très pâle - badges, médaillons d'icônes */
   --tech57-gray: #6C7A89;
   --tech57-light-gray: #F4F6F8;
+  --tech57-dark: #22282E;        /* fond footer */
 }
 
 body {
   background-color: var(--tech57-light-gray);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .bg-tech57 {
@@ -13,18 +17,114 @@ body {
 }
 
 .text-tech57 {
-  color: var(--tech57-blue) !important;
+  color: var(--tech57-blue-dark) !important;
 }
 
 .btn-tech57 {
   background-color: var(--tech57-blue);
   border-color: var(--tech57-blue);
   color: white;
+  border-radius: 12px;
 }
 
 .btn-tech57:hover {
   background-color: #3d8ab8;
   color: white;
+}
+
+.btn-outline-tech57 {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 12px;
+}
+
+.btn-outline-tech57:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Label en majuscules au-dessus d'un titre de section (ex: "NOTRE MISSION") */
+.section-label {
+  color: var(--tech57-blue-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Médaillon d'icône (fond bleu pâle, icône bleu foncé) */
+.icon-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background-color: var(--tech57-blue-light);
+  color: var(--tech57-blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+/* Carte avec effet de levée au survol */
+.card-lift {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 101, 140, 0.12);
+}
+
+/* Bannière CTA pleine largeur avec coins très arrondis */
+.cta-banner {
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+/* Overlay au survol sur les photos (équipe, projets) */
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 101, 140, 0.75), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.photo-overlay-wrapper:hover .photo-overlay {
+  opacity: 1;
+}
+
+/* Bande logos partenaires/clients - grisée, colorée au survol */
+.logo-strip img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-strip img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 .admin-sidebar {
