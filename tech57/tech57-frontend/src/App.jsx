@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import PublicNavbar from "./components/PublicNavbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminLayout from "./components/admin/AdminLayout";
+import Encadrants from "./pages/admin/encadrants/Encadrants";
+import SuiviDemande from "./pages/public/SuiviDemande";
 
 // Pages publiques
 import Home from "./pages/public/Home";
@@ -46,7 +48,7 @@ export default function App() {
       <Route path="/equipe" element={<PublicLayout><Equipe /></PublicLayout>} />
       <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
       <Route path="/demande-stage" element={<PublicLayout><DemandeStage /></PublicLayout>} />
-
+        <Route path="/suivi-demande" element={<PublicLayout><SuiviDemande /></PublicLayout>} />
       {/* --- Authentification admin --- */}
       <Route path="/admin/login" element={<AdminLogin />} />
 
@@ -55,7 +57,7 @@ export default function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="demandes" element={<Demandes />} />
         <Route path="demandes/:id" element={<DemandeDetail />} />
-        <Route path="stagiaires" element={<Stagiaires />} />
+        <Route path="stagiaires" element={<Stagiaires />} /><Route path="encadrants" element={<Encadrants />} />
         <Route path="contenu/services" element={<ServicesAdmin />} />
         <Route path="contenu/projets" element={<ProjetsAdmin />} />
         <Route path="contenu/clients" element={<ClientsAdmin />} />

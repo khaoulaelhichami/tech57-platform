@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import com.tech57.platform.dto.SuiviDemandeResponse;
 
 import java.util.List;
 
@@ -106,5 +107,10 @@ public class DemandeStageController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=demandes.xlsx")
                 .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
                 .body(excel);
+    }
+    // --- Public : suivi du statut d'une demande ---
+    @GetMapping("/api/demandes/suivi")
+    public SuiviDemandeResponse suivre(@RequestParam Long id, @RequestParam String email) {
+        return demandeStageService.suivreDemande(id, email);
     }
 }

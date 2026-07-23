@@ -5,6 +5,7 @@ const MENU = [
   { to: "/admin/dashboard", icon: "bi-speedometer2", label: "Dashboard" },
   { to: "/admin/demandes", icon: "bi-inbox", label: "Demandes de stage" },
   { to: "/admin/stagiaires", icon: "bi-people", label: "Stagiaires" },
+  { to: "/admin/encadrants", icon: "bi-person-workspace", label: "Encadrants" },
   { to: "/admin/contenu/services", icon: "bi-grid", label: "Contenu du site" },
   { to: "/admin/comptes", icon: "bi-person-badge", label: "Comptes admin" },
   { to: "/admin/parametres/pieces-requises", icon: "bi-gear", label: "Paramètres" },

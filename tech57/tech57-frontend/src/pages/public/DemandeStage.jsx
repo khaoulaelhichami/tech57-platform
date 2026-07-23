@@ -18,10 +18,31 @@ export default function DemandeStage() {
     api.get("/demandes/pieces-requises").then((res) => setPieces(res.data));
   }, []);
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleFileChange = (e) => {
-    setFichiers({ ...fichiers, [e.target.name]: e.target.files[0] });
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const tailleMax = 5 * 1024 * 1024; // 5 Mo
+    const typesAutorises = ["application/pdf", "image/jpeg", "image/png", "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+
+    if (file.size > tailleMax) {
+      setErreur(`Le fichier "${file.name}" dépasse 5 Mo.`);
+      e.target.value = "";
+      return;
+    }
+    if (!typesAutorises.includes(file.type)) {
+      setErreur(`Le fichier "${file.name}" doit être un PDF, une image ou un document Word.`);
+      e.target.value = "";
+      return;
+    }
+
+    setErreur("");
+    setFichiers({ ...fichiers, [e.target.name]: file });
   };
 
   const handleSubmit = async (e) => {

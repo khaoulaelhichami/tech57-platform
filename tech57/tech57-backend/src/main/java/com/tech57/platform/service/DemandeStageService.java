@@ -11,6 +11,7 @@ import com.tech57.platform.repository.StagiaireRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import com.tech57.platform.dto.SuiviDemandeResponse;
 
 import java.util.List;
 @Service
@@ -103,5 +104,14 @@ public class DemandeStageService {
         DemandeStage demande = getById(id);
         demande.setNoteAdmin(note);
         return demandeStageRepository.save(demande);
+    }
+    public SuiviDemandeResponse suivreDemande(Long id, String email) {
+        DemandeStage demande = getById(id);
+        if (!demande.getEmail().equalsIgnoreCase(email)) {
+            throw new RuntimeException("Aucune demande trouvee avec ces informations");
+        }
+        return new SuiviDemandeResponse(
+                demande.getNom(), demande.getPrenom(), demande.getDomaine(), demande.getStatut()
+        );
     }
 }

@@ -19,10 +19,20 @@ public class AuthService {
     private final JwtUtil jwtUtil;
 
     public LoginResponse login(LoginRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getMotDePasse())
-        );
-
+        System.out.println("Email reçu : " + request.getEmail());
+        System.out.println("Mot de passe reçu : " + request.getMotDePasse());
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            request.getEmail(),
+                            request.getMotDePasse()
+                    )
+            );
+            System.out.println("Authentification réussie");
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
         Administrateur admin = administrateurRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new RuntimeException("Administrateur introuvable"));
 
