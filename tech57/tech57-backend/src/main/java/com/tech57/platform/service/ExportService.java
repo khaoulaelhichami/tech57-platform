@@ -1,15 +1,16 @@
 package com.tech57.platform.service;
-
-import com.lowagie.text.*;
+import com.lowagie.text.Document;
+import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfWriter;
 import com.tech57.platform.entity.DemandeStage;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
 import java.util.List;
-
 @Service
 public class ExportService {
 
@@ -20,8 +21,8 @@ public class ExportService {
             PdfWriter.getInstance(document, out);
             document.open();
 
-            Font titre = new Font(Font.HELVETICA, 18, Font.BOLD);
-            Font normal = new Font(Font.HELVETICA, 12);
+            com.lowagie.text.Font titre = new com.lowagie.text.Font(com.lowagie.text.Font.HELVETICA, 18, com.lowagie.text.Font.BOLD);
+            com.lowagie.text.Font normal = new com.lowagie.text.Font(com.lowagie.text.Font.HELVETICA, 12);
 
             document.add(new Paragraph("Tech57 - Fiche de demande de stage", titre));
             document.add(new Paragraph(" "));
