@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import PublicNavbar from "./components/PublicNavbar";
+import Footer from "./components/home/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminLayout from "./components/admin/AdminLayout";
 
@@ -32,6 +33,7 @@ function PublicLayout({ children }) {
     <>
       <PublicNavbar />
       {children}
+      <Footer />
     </>
   );
 }

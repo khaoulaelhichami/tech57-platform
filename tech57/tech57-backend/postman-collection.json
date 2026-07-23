@@ -1,0 +1,543 @@
+{
+  "info": {
+    "name": "Tech57 Platform API",
+    "description": "Collection Postman pour tester l'API Tech57 Platform\n\nAuthentification: La plupart des endpoints nécessitent un token JWT.\n1. Appelez d'abord POST /api/auth/login\n2. Copiez le token reçu\n3. Dans Postman, définissez la variable globale \"token\"\n4. Les requêtes admin utiliseront automatiquement le header Authorization: Bearer {{token}}",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Authentification",
+      "item": [
+        {
+          "name": "POST Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.token) {",
+                  "  pm.collectionVariables.set('token', jsonData.token);",
+                  "  console.log('Token saved:', jsonData.token);",
+                  "}",
+                  "",
+                  "pm.test('Login successful', function() {",
+                  "  pm.response.to.have.status(200);",
+                  "  pm.expect(jsonData).to.have.property('token');",
+                  "  pm.expect(jsonData).to.have.property('email');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@tech57.com\",\n  \"motDePasse\": \"admin123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            },
+            "description": "Authentification administrateur.\nRetourne un token JWT à utiliser pour les endpoints protégés."
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Endpoints Publics (aucun token requis)",
+      "item": [
+        {
+          "name": "GET Services",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/public/services", "host": ["{{base_url}}"], "path": ["public", "services"] },
+            "description": "Liste des services actifs (vitrine publique)"
+          }
+        },
+        {
+          "name": "GET Projets",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/public/projets", "host": ["{{base_url}}"], "path": ["public", "projets"] },
+            "description": "Liste des projets actifs"
+          }
+        },
+        {
+          "name": "GET Clients",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/public/clients", "host": ["{{base_url}}"], "path": ["public", "clients"] },
+            "description": "Liste des clients actifs"
+          }
+        },
+        {
+          "name": "GET Partenaires",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/public/partenaires", "host": ["{{base_url}}"], "path": ["public", "partenaires"] },
+            "description": "Liste des partenaires actifs"
+          }
+        },
+        {
+          "name": "GET Membres",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/public/membres", "host": ["{{base_url}}"], "path": ["public", "membres"] },
+            "description": "Liste des membres de l'équipe actifs"
+          }
+        },
+        {
+          "name": "GET Pièces requises",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/demandes/pieces-requises", "host": ["{{base_url}}"], "path": ["demandes", "pieces-requises"] },
+            "description": "Liste des pièces requises pour une demande de stage"
+          }
+        },
+        {
+          "name": "POST Postuler (Demande de stage)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "donnees", "value": "{\n  \"nom\": \"Dupont\",\n  \"prenom\": \"Jean\",\n  \"email\": \"jean.dupont@email.com\",\n  \"telephone\": \"0612345678\",\n  \"etablissement\": \"ENSA\",\n  \"domaine\": \"Informatique\",\n  \"periodeDebut\": \"2026-09-01\",\n  \"periodeFin\": \"2026-12-31\"\n}", "type": "text", "contentType": "application/json" },
+                { "key": "cv", "type": "file", "src": "", "description": "Fichier CV (optionnel)" },
+                { "key": "cin", "type": "file", "src": "" },
+                { "key": "lettreMotivation", "type": "file", "src": "" }
+              ]
+            },
+            "url": { "raw": "{{base_url}}/demandes/postuler", "host": ["{{base_url}}"], "path": ["demandes", "postuler"] },
+            "description": "Soumettre une demande de stage (multipart/form-data).\nLe champ 'donnees' est un JSON avec les informations du candidat.\nLes fichiers sont optionnels."
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Endpoints Admin (token requis)",
+      "item": [
+        {
+          "name": "Dashboard Stats",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/dashboard/stats", "host": ["{{base_url}}"], "path": ["admin", "dashboard", "stats"] },
+            "description": "Statistiques du tableau de bord"
+          }
+        },
+        {
+          "name": "Demandes - Liste",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": {
+              "raw": "{{base_url}}/admin/demandes",
+              "host": ["{{base_url}}"],
+              "path": ["admin", "demandes"],
+              "query": [
+                { "key": "statut", "value": "RECUE", "disabled": true, "description": "Filtrer par statut: RECUE, EN_COURS_ETUDE, ACCEPTEE, REFUSEE, etc." }
+              ]
+            },
+            "description": "Liste de toutes les demandes de stage (filtre optionnel par statut)"
+          }
+        },
+        {
+          "name": "Demandes - Détail par ID",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/demandes/1", "host": ["{{base_url}}"], "path": ["admin", "demandes", "1"] },
+            "description": "Détail d'une demande de stage (remplacer 1 par l'ID réel)"
+          }
+        },
+        {
+          "name": "Demandes - Changer statut",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": {
+              "raw": "{{base_url}}/admin/demandes/1/statut?statut=ACCEPTEE",
+              "host": ["{{base_url}}"],
+              "path": ["admin", "demandes", "1", "statut"],
+              "query": [ { "key": "statut", "value": "ACCEPTEE" } ]
+            },
+            "description": "Changer le statut d'une demande.\nValeurs possibles: RECUE, EN_COURS_ETUDE, ACCEPTEE, REFUSEE, EN_ATTENTE_COMPLEMENT, STAGE_EN_COURS, STAGE_TERMINE"
+          }
+        },
+        {
+          "name": "Demandes - Ajouter note",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "text/plain" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "Candidat très motivé, dossier complet."
+            },
+            "url": { "raw": "{{base_url}}/admin/demandes/1/note", "host": ["{{base_url}}"], "path": ["admin", "demandes", "1", "note"] },
+            "description": "Ajouter/modifier la note admin (body en texte brut, pas JSON)"
+          }
+        },
+        {
+          "name": "Demandes - Documents",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/demandes/1/documents", "host": ["{{base_url}}"], "path": ["admin", "demandes", "1", "documents"] },
+            "description": "Liste des documents d'une demande"
+          }
+        },
+        {
+          "name": "Demandes - Télécharger document",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/documents/1/telecharger", "host": ["{{base_url}}"], "path": ["admin", "documents", "1", "telecharger"] },
+            "description": "Télécharger un fichier par ID de document"
+          }
+        },
+        {
+          "name": "Demandes - Export PDF",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/demandes/1/export-pdf", "host": ["{{base_url}}"], "path": ["admin", "demandes", "1", "export-pdf"] },
+            "description": "Exporter une demande en PDF"
+          }
+        },
+        {
+          "name": "Demandes - Export Excel",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": {
+              "raw": "{{base_url}}/admin/demandes/export-excel",
+              "host": ["{{base_url}}"],
+              "path": ["admin", "demandes", "export-excel"],
+              "query": [ { "key": "statut", "value": "RECUE", "disabled": true } ]
+            },
+            "description": "Exporter toutes les demandes en Excel (filtre optionnel par statut)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Gestion des comptes admin (token requis)",
+      "item": [
+        {
+          "name": "Comptes - Liste",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/comptes", "host": ["{{base_url}}"], "path": ["admin", "comptes"] }
+          }
+        },
+        {
+          "name": "Comptes - Créer",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Admin2\",\n  \"prenom\": \"Test\",\n  \"email\": \"admin2@tech57.com\",\n  \"motDePasse\": \"password123\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/admin/comptes", "host": ["{{base_url}}"], "path": ["admin", "comptes"] }
+          }
+        },
+        {
+          "name": "Comptes - Modifier",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Admin2 Updated\",\n  \"prenom\": \"Test\",\n  \"email\": \"admin2@tech57.com\",\n  \"actif\": true\n}"
+            },
+            "url": { "raw": "{{base_url}}/admin/comptes/2", "host": ["{{base_url}}"], "path": ["admin", "comptes", "2"] }
+          }
+        },
+        {
+          "name": "Comptes - Changer mot de passe",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "text/plain" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "nouveauMotDePasse123"
+            },
+            "url": { "raw": "{{base_url}}/admin/comptes/2/mot-de-passe", "host": ["{{base_url}}"], "path": ["admin", "comptes", "2", "mot-de-passe"] }
+          }
+        },
+        {
+          "name": "Comptes - Désactiver (soft delete)",
+          "request": {
+            "method": "DELETE",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/comptes/2", "host": ["{{base_url}}"], "path": ["admin", "comptes", "2"] },
+            "description": "Désactive le compte (actif=false), ne le supprime pas"
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Gestion des stagiaires (token requis)",
+      "item": [
+        {
+          "name": "Stagiaires - Liste",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/stagiaires", "host": ["{{base_url}}"], "path": ["admin", "stagiaires"] }
+          }
+        },
+        {
+          "name": "Stagiaires - Détail",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+            "url": { "raw": "{{base_url}}/admin/stagiaires/1", "host": ["{{base_url}}"], "path": ["admin", "stagiaires", "1"] }
+          }
+        },
+        {
+          "name": "Stagiaires - Modifier",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"encadrant\": \"M. Martin\",\n  \"dateDebut\": \"2026-09-01\",\n  \"dateFin\": \"2026-12-31\",\n  \"evaluation\": \"Bon travail\",\n  \"actif\": true\n}"
+            },
+            "url": { "raw": "{{base_url}}/admin/stagiaires/1", "host": ["{{base_url}}"], "path": ["admin", "stagiaires", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Gestion du contenu (token requis)",
+      "item": [
+        {
+          "name": "CRUD Services",
+          "item": [
+            {
+              "name": "Liste",
+              "request": {
+                "method": "GET",
+                "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+                "url": { "raw": "{{base_url}}/admin/contenu/services", "host": ["{{base_url}}"], "path": ["admin", "contenu", "services"] }
+              }
+            },
+            {
+              "name": "Créer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"titre\": \"Développement Web\",\n  \"description\": \"Création de sites web modernes\",\n  \"icone\": \"code-slash\",\n  \"ordre\": 1,\n  \"actif\": true\n}"
+                },
+                "url": { "raw": "{{base_url}}/admin/contenu/services", "host": ["{{base_url}}"], "path": ["admin", "contenu", "services"] }
+              }
+            },
+            {
+              "name": "Modifier",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"titre\": \"Développement Web & Mobile\",\n  \"description\": \"Création de sites et apps modernes\",\n  \"icone\": \"code-slash\",\n  \"ordre\": 1,\n  \"actif\": true\n}"
+                },
+                "url": { "raw": "{{base_url}}/admin/contenu/services/1", "host": ["{{base_url}}"], "path": ["admin", "contenu", "services", "1"] }
+              }
+            },
+            {
+              "name": "Supprimer",
+              "request": {
+                "method": "DELETE",
+                "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+                "url": { "raw": "{{base_url}}/admin/contenu/services/1", "host": ["{{base_url}}"], "path": ["admin", "contenu", "services", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "CRUD Projets",
+          "item": [
+            {
+              "name": "Liste",
+              "request": {
+                "method": "GET",
+                "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+                "url": { "raw": "{{base_url}}/admin/contenu/projets", "host": ["{{base_url}}"], "path": ["admin", "contenu", "projets"] }
+              }
+            },
+            {
+              "name": "Créer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"titre\": \"Plateforme Tech57\",\n  \"description\": \"Développement de la plateforme web\",\n  \"client\": { \"id\": 1 },\n  \"actif\": true\n}"
+                },
+                "url": { "raw": "{{base_url}}/admin/contenu/projets", "host": ["{{base_url}}"], "path": ["admin", "contenu", "projets"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "CRUD Clients",
+          "item": [
+            {
+              "name": "Liste",
+              "request": {
+                "method": "GET",
+                "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+                "url": { "raw": "{{base_url}}/admin/contenu/clients", "host": ["{{base_url}}"], "path": ["admin", "contenu", "clients"] }
+              }
+            },
+            {
+              "name": "Créer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nom\": \"TechCorp\",\n  \"actif\": true\n}"
+                },
+                "url": { "raw": "{{base_url}}/admin/contenu/clients", "host": ["{{base_url}}"], "path": ["admin", "contenu", "clients"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "CRUD Partenaires",
+          "item": [
+            {
+              "name": "Liste",
+              "request": {
+                "method": "GET",
+                "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+                "url": { "raw": "{{base_url}}/admin/contenu/partenaires", "host": ["{{base_url}}"], "path": ["admin", "contenu", "partenaires"] }
+              }
+            },
+            {
+              "name": "Créer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nom\": \"Partner Inc\",\n  \"actif\": true\n}"
+                },
+                "url": { "raw": "{{base_url}}/admin/contenu/partenaires", "host": ["{{base_url}}"], "path": ["admin", "contenu", "partenaires"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "CRUD Membres",
+          "item": [
+            {
+              "name": "Liste",
+              "request": {
+                "method": "GET",
+                "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+                "url": { "raw": "{{base_url}}/admin/contenu/membres", "host": ["{{base_url}}"], "path": ["admin", "contenu", "membres"] }
+              }
+            },
+            {
+              "name": "Créer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nom\": \"Martin\",\n  \"prenom\": \"Sophie\",\n  \"poste\": \"Développeuse Full Stack\",\n  \"ordre\": 1,\n  \"actif\": true\n}"
+                },
+                "url": { "raw": "{{base_url}}/admin/contenu/membres", "host": ["{{base_url}}"], "path": ["admin", "contenu", "membres"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "CRUD Pièces requises",
+          "item": [
+            {
+              "name": "Liste",
+              "request": {
+                "method": "GET",
+                "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+                "url": { "raw": "{{base_url}}/admin/contenu/pieces-requises", "host": ["{{base_url}}"], "path": ["admin", "contenu", "pieces-requises"] }
+              }
+            },
+            {
+              "name": "Créer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nom\": \"Attestation de stage\",\n  \"obligatoire\": false,\n  \"active\": true\n}"
+                },
+                "url": { "raw": "{{base_url}}/admin/contenu/pieces-requises", "host": ["{{base_url}}"], "path": ["admin", "contenu", "pieces-requises"] }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

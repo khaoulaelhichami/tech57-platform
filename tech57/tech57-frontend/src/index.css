@@ -1,44 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tech57-50: #EFF6FF;
+  --color-tech57-100: #DBEAFE;
+  --color-tech57-200: #BFDBFE;
+  --color-tech57-300: #93C5FD;
+  --color-tech57-400: #60A5FA;
+  --color-tech57-500: #2563EB;
+  --color-tech57-600: #1D4ED8;
+  --color-tech57-700: #1E40AF;
+  --color-tech57-800: #1E3A8A;
+  --color-tech57-900: #172554;
+  --color-tech57-950: #0F172A;
+  --color-accent: #06B6D4;
+  --color-accent-dark: #0891B2;
+  --color-surface: #F8FAFC;
+  --color-muted: #64748B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-slate-900 antialiased;
+  }
+}
+
 :root {
-  --tech57-blue: #4FA8D8;
-  --tech57-gray: #6C7A89;
-  --tech57-light-gray: #F4F6F8;
+  --tech57-blue: #2563EB;
+  --tech57-gray: #64748B;
+  --tech57-light-gray: #F8FAFC;
 }
 
-body {
-  background-color: var(--tech57-light-gray);
-}
-
-.bg-tech57 {
-  background-color: var(--tech57-blue) !important;
-}
-
-.text-tech57 {
-  color: var(--tech57-blue) !important;
-}
-
+.bg-tech57 { background-color: #2563EB !important; }
+.text-tech57 { color: #2563EB !important; }
 .btn-tech57 {
-  background-color: var(--tech57-blue);
-  border-color: var(--tech57-blue);
+  background-color: #2563EB;
+  border-color: #2563EB;
   color: white;
 }
-
 .btn-tech57:hover {
-  background-color: #3d8ab8;
+  background-color: #1D4ED8;
   color: white;
 }
-
 .admin-sidebar {
   min-height: 100vh;
   background-color: #2c3e50;
 }
-
 .admin-sidebar .nav-link {
   color: #bdc3c7;
   padding: 12px 20px;
 }
-
 .admin-sidebar .nav-link:hover,
 .admin-sidebar .nav-link.active {
   color: white;
-  background-color: var(--tech57-blue);
+  background-color: #2563EB;
 }

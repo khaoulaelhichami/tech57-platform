@@ -1,0 +1,5903 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2026-07-23T19:04:52.851+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : Starting Tech57PlatformApplication using Java 21.0.10 with PID 23224 (C:\Users\Hp\tech57-platform\tech57\tech57-backend\target\classes started by Hp in C:\Users\Hp\tech57-platform\tech57\tech57-backend)
+2026-07-23T19:04:52.859+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-07-23T19:04:52.998+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-23T19:04:52.999+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-23T19:04:55.075+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-23T19:04:55.329+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 232 ms. Found 10 JPA repository interfaces.
+2026-07-23T19:04:57.218+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-07-23T19:04:57.255+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-23T19:04:57.255+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2026-07-23T19:04:57.421+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-23T19:04:57.423+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4421 ms
+2026-07-23T19:04:57.517+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-23T19:04:58.047+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@d42d50e
+2026-07-23T19:04:58.052+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-23T19:04:58.083+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/gestion_stage'
+2026-07-23T19:04:58.424+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-23T19:04:58.607+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-07-23T19:04:58.710+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-23T19:04:59.639+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-23T19:04:59.794+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-23T19:05:03.506+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-23T19:05:03.835+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-23T19:05:05.582+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-23T19:05:05.633+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-07-23T19:05:07.095+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-07-23T19:05:07.209+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-07-23T19:05:07.230+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : Started Tech57PlatformApplication in 15.485 seconds (process running for 16.935)
+2026-07-23T19:05:22.134+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-23T19:05:22.137+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-23T19:05:22.148+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+2026-07-23T19:10:36.676+01:00  INFO 23224 --- [tech57-platform] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-23T19:10:36.720+01:00  INFO 23224 --- [tech57-platform] [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-23T19:10:36.728+01:00  INFO 23224 --- [tech57-platform] [       Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-23T19:10:36.737+01:00  INFO 23224 --- [tech57-platform] [       Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2026-07-23T19:10:36.956+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : Starting Tech57PlatformApplication using Java 21.0.10 with PID 23224 (C:\Users\Hp\tech57-platform\tech57\tech57-backend\target\classes started by Hp in C:\Users\Hp\tech57-platform\tech57\tech57-backend)
+2026-07-23T19:10:36.956+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-07-23T19:10:37.874+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-23T19:10:38.057+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 10 JPA repository interfaces.
+2026-07-23T19:10:38.610+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-07-23T19:10:38.619+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-23T19:10:38.619+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2026-07-23T19:10:38.708+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-23T19:10:38.709+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1750 ms
+2026-07-23T19:10:38.792+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-07-23T19:10:39.006+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@1952616c
+2026-07-23T19:10:39.008+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-07-23T19:10:39.008+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/gestion_stage'
+2026-07-23T19:10:39.136+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-23T19:10:39.149+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-23T19:10:39.181+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-23T19:10:39.203+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-23T19:10:39.843+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-23T19:10:40.034+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-23T19:10:40.566+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-23T19:10:40.582+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-07-23T19:10:41.053+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-07-23T19:10:41.100+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-07-23T19:10:41.112+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : Started Tech57PlatformApplication in 4.254 seconds (process running for 350.816)
+2026-07-23T19:10:41.117+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-23T19:12:03.094+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-23T19:12:03.096+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-23T19:12:03.101+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    insert 
+    into
+        "administrateurs"
+        ("actif", "date_creation", "email", "mot_de_passe", "nom", "prenom", "super_admin") 
+    values
+        (?, ?, ?, ?, ?, ?, ?) 
+    returning "id"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+2026-07-23T19:13:10.922+01:00  INFO 23224 --- [tech57-platform] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-07-23T19:13:11.329+01:00  INFO 23224 --- [tech57-platform] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-23T19:13:11.332+01:00  INFO 23224 --- [tech57-platform] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-07-23T19:13:11.351+01:00  INFO 23224 --- [tech57-platform] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2026-07-23T19:13:11.570+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : Starting Tech57PlatformApplication using Java 21.0.10 with PID 23224 (C:\Users\Hp\tech57-platform\tech57\tech57-backend\target\classes started by Hp in C:\Users\Hp\tech57-platform\tech57\tech57-backend)
+2026-07-23T19:13:11.570+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-07-23T19:13:12.518+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-23T19:13:12.605+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 10 JPA repository interfaces.
+2026-07-23T19:13:13.207+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-07-23T19:13:13.212+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-23T19:13:13.212+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2026-07-23T19:13:13.277+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-23T19:13:13.277+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1697 ms
+2026-07-23T19:13:13.365+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-07-23T19:13:13.519+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@22e806cd
+2026-07-23T19:13:13.519+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-07-23T19:13:13.520+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/gestion_stage'
+2026-07-23T19:13:13.645+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-23T19:13:13.659+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-23T19:13:13.697+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-23T19:13:13.724+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-23T19:13:14.274+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-23T19:13:14.439+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-23T19:13:14.919+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-23T19:13:14.950+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-07-23T19:13:15.435+01:00  WARN 23224 --- [tech57-platform] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-07-23T19:13:15.487+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-07-23T19:13:15.501+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] c.t.platform.Tech57PlatformApplication   : Started Tech57PlatformApplication in 4.027 seconds (process running for 505.204)
+2026-07-23T19:13:15.505+01:00  INFO 23224 --- [tech57-platform] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-07-23T19:17:03.278+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-23T19:17:03.279+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-23T19:17:03.287+01:00  INFO 23224 --- [tech57-platform] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        pr1_0."id",
+        pr1_0."active",
+        pr1_0."nom",
+        pr1_0."obligatoire" 
+    from
+        "pieces_requises" pr1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        pr1_0."id",
+        pr1_0."active",
+        pr1_0."nom",
+        pr1_0."obligatoire" 
+    from
+        "pieces_requises" pr1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        pr1_0."id",
+        pr1_0."active",
+        pr1_0."nom",
+        pr1_0."obligatoire" 
+    from
+        "pieces_requises" pr1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        pr1_0."id",
+        pr1_0."active",
+        pr1_0."nom",
+        pr1_0."obligatoire" 
+    from
+        "pieces_requises" pr1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    insert 
+    into
+        "services"
+        ("actif", "description", "icone", "ordre", "titre") 
+    values
+        (?, ?, ?, ?, ?) 
+    returning "id"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    insert 
+    into
+        "administrateurs"
+        ("actif", "date_creation", "email", "mot_de_passe", "nom", "prenom", "super_admin") 
+    values
+        (?, ?, ?, ?, ?, ?, ?) 
+    returning "id"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        pr1_0."id",
+        pr1_0."active",
+        pr1_0."nom",
+        pr1_0."obligatoire" 
+    from
+        "pieces_requises" pr1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        pr1_0."id",
+        pr1_0."active",
+        pr1_0."nom",
+        pr1_0."obligatoire" 
+    from
+        "pieces_requises" pr1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+2026-07-23T20:23:11.194+01:00  WARN 23224 --- [tech57-platform] [l-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=6m26s438ms400µs900ns).
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        p1_0."id",
+        p1_0."actif",
+        p1_0."client_id",
+        p1_0."date_publication",
+        p1_0."description",
+        p1_0."image",
+        p1_0."titre" 
+    from
+        "projets" p1_0 
+    where
+        p1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        p1_0."id",
+        p1_0."actif",
+        p1_0."client_id",
+        p1_0."date_publication",
+        p1_0."description",
+        p1_0."image",
+        p1_0."titre" 
+    from
+        "projets" p1_0 
+    where
+        p1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        m1_0."id",
+        m1_0."actif",
+        m1_0."bio",
+        m1_0."nom",
+        m1_0."ordre",
+        m1_0."photo",
+        m1_0."poste",
+        m1_0."prenom" 
+    from
+        "membres" m1_0 
+    where
+        m1_0."actif" 
+    order by
+        m1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        m1_0."id",
+        m1_0."actif",
+        m1_0."bio",
+        m1_0."nom",
+        m1_0."ordre",
+        m1_0."photo",
+        m1_0."poste",
+        m1_0."prenom" 
+    from
+        "membres" m1_0 
+    where
+        m1_0."actif" 
+    order by
+        m1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        p1_0."id",
+        p1_0."actif",
+        p1_0."client_id",
+        p1_0."date_publication",
+        p1_0."description",
+        p1_0."image",
+        p1_0."titre" 
+    from
+        "projets" p1_0 
+    where
+        p1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        p1_0."id",
+        p1_0."actif",
+        p1_0."client_id",
+        p1_0."date_publication",
+        p1_0."description",
+        p1_0."image",
+        p1_0."titre" 
+    from
+        "projets" p1_0 
+    where
+        p1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        pr1_0."id",
+        pr1_0."active",
+        pr1_0."nom",
+        pr1_0."obligatoire" 
+    from
+        "pieces_requises" pr1_0 
+    where
+        pr1_0."active"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        pr1_0."id",
+        pr1_0."active",
+        pr1_0."nom",
+        pr1_0."obligatoire" 
+    from
+        "pieces_requises" pr1_0 
+    where
+        pr1_0."active"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        p1_0."id",
+        p1_0."actif",
+        p1_0."client_id",
+        p1_0."date_publication",
+        p1_0."description",
+        p1_0."image",
+        p1_0."titre" 
+    from
+        "projets" p1_0 
+    where
+        p1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        p1_0."id",
+        p1_0."actif",
+        p1_0."client_id",
+        p1_0."date_publication",
+        p1_0."description",
+        p1_0."image",
+        p1_0."titre" 
+    from
+        "projets" p1_0 
+    where
+        p1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        m1_0."id",
+        m1_0."actif",
+        m1_0."bio",
+        m1_0."nom",
+        m1_0."ordre",
+        m1_0."photo",
+        m1_0."poste",
+        m1_0."prenom" 
+    from
+        "membres" m1_0 
+    where
+        m1_0."actif" 
+    order by
+        m1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        m1_0."id",
+        m1_0."actif",
+        m1_0."bio",
+        m1_0."nom",
+        m1_0."ordre",
+        m1_0."photo",
+        m1_0."poste",
+        m1_0."prenom" 
+    from
+        "membres" m1_0 
+    where
+        m1_0."actif" 
+    order by
+        m1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        s1_0."id",
+        s1_0."actif",
+        s1_0."date_debut",
+        s1_0."date_fin",
+        s1_0."demande_id",
+        s1_0."encadrant",
+        s1_0."evaluation" 
+    from
+        "stagiaires" s1_0 
+    where
+        s1_0."actif"
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        count(ds1_0."id") 
+    from
+        "demandes_stage" ds1_0 
+    where
+        ds1_0."statut"=?
+Hibernate: 
+    select
+        ds1_0."id",
+        ds1_0."date_depot",
+        ds1_0."domaine",
+        ds1_0."email",
+        ds1_0."etablissement",
+        ds1_0."nom",
+        ds1_0."note_admin",
+        ds1_0."periode_debut",
+        ds1_0."periode_fin",
+        ds1_0."prenom",
+        ds1_0."statut",
+        ds1_0."telephone" 
+    from
+        "demandes_stage" ds1_0
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        a1_0."id",
+        a1_0."actif",
+        a1_0."date_creation",
+        a1_0."email",
+        a1_0."mot_de_passe",
+        a1_0."nom",
+        a1_0."prenom",
+        a1_0."super_admin" 
+    from
+        "administrateurs" a1_0 
+    where
+        a1_0."email"=?
+Hibernate: 
+    select
+        c1_0."id",
+        c1_0."actif",
+        c1_0."logo",
+        c1_0."nom" 
+    from
+        "clients" c1_0 
+    where
+        c1_0."actif"
+Hibernate: 
+    select
+        si1_0."id",
+        si1_0."actif",
+        si1_0."description",
+        si1_0."icone",
+        si1_0."ordre",
+        si1_0."titre" 
+    from
+        "services" si1_0 
+    where
+        si1_0."actif" 
+    order by
+        si1_0."ordre"
