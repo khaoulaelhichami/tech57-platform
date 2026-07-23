@@ -4,19 +4,20 @@ import com.tech57.platform.dto.DemandeStageRequest;
 import com.tech57.platform.entity.DemandeStage;
 import com.tech57.platform.entity.DocumentDemande;
 import com.tech57.platform.entity.StatutDemande;
+import com.tech57.platform.repository.DocumentDemandeRepository;
 import com.tech57.platform.service.ContenuService;
 import com.tech57.platform.service.DemandeStageService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-
-import java.util.List;
 import com.tech57.platform.service.ExportService;
+import com.tech57.platform.service.FileStorageService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,6 +26,8 @@ public class DemandeStageController {
     private final DemandeStageService demandeStageService;
     private final ContenuService contenuService;
     private final ExportService exportService;
+    private final DocumentDemandeRepository documentDemandeRepository;
+    private final FileStorageService fileStorageService;
 
     // --- Public : depot de candidature avec fichiers ---
     @PostMapping(value = "/api/demandes/postuler", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -71,6 +74,19 @@ public class DemandeStageController {
     public List<DocumentDemande> getDocuments(@PathVariable Long id) {
         return demandeStageService.getDocuments(id);
     }
+
+    // --- Admin : telechargement d'un document ---
+    @GetMapping("/api/admin/documents/{id}/telecharger")
+    public ResponseEntity<Resource> telechargerDocument(@PathVariable Long id) {
+        DocumentDemande doc = documentDemandeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Document introuvable"));
+        Resource resource = fileStorageService.charger(doc.getCheminFichier());
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + doc.getNomFichier())
+                .body(resource);
+    }
+
+    // --- Admin : export PDF d'une demande ---
     @GetMapping("/api/admin/demandes/{id}/export-pdf")
     public ResponseEntity<byte[]> exportPdf(@PathVariable Long id) {
         DemandeStage demande = demandeStageService.getById(id);
@@ -81,6 +97,7 @@ public class DemandeStageController {
                 .body(pdf);
     }
 
+    // --- Admin : export Excel de la liste des demandes ---
     @GetMapping("/api/admin/demandes/export-excel")
     public ResponseEntity<byte[]> exportExcel(@RequestParam(required = false) StatutDemande statut) {
         List<DemandeStage> demandes = statut == null ? demandeStageService.getAll() : demandeStageService.getByStatut(statut);
