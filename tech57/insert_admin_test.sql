@@ -4,7 +4,7 @@
 -- (les tables sont creees automatiquement par Hibernate)
 -- ============================================================
 
-USE tech57_platform;
+--USE tech57_platform;
 
 INSERT INTO administrateurs (nom, prenom, email, mot_de_passe, actif, super_admin, date_creation)
 VALUES
